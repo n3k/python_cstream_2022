@@ -1,6 +1,6 @@
 import random
 
-colors = ['red', 'green', 'blue', 'white', 'black', 'magenta']
+colors = ['red', 'green', 'blue', 'white', 'black', 'magenta', 'yellow']
 
 names = [ 
     "Tyrell", "Vito" , "Vorian",
@@ -29,3 +29,15 @@ for i in range(100):
 #   how many aliens per color exist
 # e.g: { "red": 10, "green": 5, }
 # Then print a message displaying how many aliens are of each color
+
+
+res = {}
+for color in colors:
+    res[color] = 0
+
+for alien in aliens:
+    color_key = alien['color']
+    res[color_key] = res[color_key] + 1
+
+for k, v in res.items():
+    print(f"There are {v} {k} aliens")
